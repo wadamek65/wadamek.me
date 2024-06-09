@@ -5,8 +5,6 @@ import mdx from '@astrojs/mdx'
 import sentry from '@sentry/astro'
 import icon from 'astro-icon'
 
-import vercel from '@astrojs/vercel/serverless'
-
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://wadamek.me/',
