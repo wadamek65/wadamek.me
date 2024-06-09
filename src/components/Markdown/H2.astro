@@ -1,0 +1,11 @@
+---
+const props = Astro.props
+---
+
+<h2 {...props} class="relative">
+	<a
+		class="absolute -left-8 text-puerto-rico-300 no-underline underline-offset-4 hover:underline"
+		href={`#${props.id}`}>#</a
+	>
+	<slot />
+</h2>

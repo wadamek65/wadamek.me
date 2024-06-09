@@ -1,0 +1,50 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import { fade } from 'astro:transitions'
+import Header from '../components/Header.astro'
+import '../styles/global.css'
+import PostHog from '../components/PostHog.astro'
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html transition:animate="none" lang="en" class="bg-remy-100 text-mirage-950">
+	<head>
+		<title>{title}</title>
+		<link rel="icon" type="image/svg+xml" href="/parrot_favicon_cropped.svg" />
+		<meta charset="utf-8" />
+		<meta name="description" content="Personal website of wadamek65" />
+		<meta name="viewport" content="width=device-width" />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="wadamek65 blog"
+			href={`${Astro.site}rss.xml`}
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
+		<PostHog />
+	</head>
+	<body class="mx-auto mb-16 max-w-screen-sm text-justify">
+		<Header />
+		<main class="px-8 sm:px-0" transition:animate={fade({ duration: '0.2s' })}>
+			<slot />
+		</main>
+		<script>
+			function colorMode() {
+				if (
+					localStorage.theme === 'light' ||
+					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)
+				) {
+					document.documentElement.classList.add('light')
+				} else {
+					document.documentElement.classList.remove('light')
+				}
+			}
+
+			colorMode()
+			document.addEventListener('astro:after-swap', colorMode)
+		</script>
+	</body>
+</html>

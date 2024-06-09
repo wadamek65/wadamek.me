@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<header>
+	<nav transition:persist>
+		<div
+			class="mb-8 grid h-20 grid-cols-2 items-center border-b border-dotted border-b-st-tropaz-400 px-8 sm:px-0"
+		>
+			<div class="flex items-center space-x-2">
+				<a
+					class="font-neco text-2xl font-bold text-st-tropaz-700 decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+					href="/">wadamek65</a
+				>
+			</div>
+			<div class="flex space-x-4 justify-self-end font-pally">
+				<a
+					class="text-xl text-st-tropaz-700 decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+					href="/blog/">blog</a
+				>
+				<a
+					class="flex items-center text-xl text-st-tropaz-700 decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+					href="https://github.com/wadamek65"
+					target="_blank">GitHub<Icon class="ml-1 inline size-6" name="github" /></a
+				>
+				<a
+					class="flex items-center text-xl text-st-tropaz-700 decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+					href="/rss.xml"
+					target="_blank">RSS<Icon class="ml-1 inline size-6" name="rss" /></a
+				>
+				<!--<ThemeIcon />-->
+			</div>
+		</div>
+	</nav>
+</header>

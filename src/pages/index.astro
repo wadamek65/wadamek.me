@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProfilePicture from '../components/ProfilePicture.astro'
+import IconLink from '../components/IconLink.astro'
+import PageSection from '../components/PageSection.astro'
+import PageTitle from '../components/PageTitle.astro'
+import PageSectionTitle from '../components/PageSectionTitle.astro'
+---
+
+<Layout title="wadamek65 | home">
+	<PageTitle>home</PageTitle>
+	<PageSection>
+		<div class="mb-4 flex justify-center">
+			<ProfilePicture />
+		</div>
+		<p>
+			Hi, I'm Wojciech. I'm a full stack web developer/software architect/tech lead. I don't know
+			what I'm going to do with this website yet. Hopefully I'll figure it out with time.
+		</p>
+	</PageSection>
+	<PageSection>
+		<PageSectionTitle>socials</PageSectionTitle>
+		<div class="mb-2 flex gap-x-4">
+			<IconLink name="github" alt="GitHub profile link" href="https://github.com/wadamek65" />
+			<IconLink
+				name="linkedin"
+				alt="LinkedIn profile link"
+				href="https://www.linkedin.com/in/wadamek65/"
+			/>
+			<IconLink name="x" alt="X profile link" href="https://x.com/wadamek65" />
+			<!--<SocialsIcon-->
+			<!--	name="discord"-->
+			<!--	alt="Discord profile link"-->
+			<!--	href="https://discord.com/users/1062147699056586894"-->
+			<!--/>-->
+			<IconLink
+				name="soundcloud"
+				alt="SoundCloud profile link"
+				href="https://soundcloud.com/voy-347736249"
+			/>
+			<IconLink name="reddit" alt="Reddit profile link" href="https://reddit.com/u/wadamek65" />
+		</div>
+		e-mail: wadamek65@gmail.com
+		<div class="text-xs">
+			If someone knows how to get the AI to get the colors of my parrot right please let me know!
+		</div>
+	</PageSection>
+</Layout>

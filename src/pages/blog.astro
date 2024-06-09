@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content'
+
+import BlogPost from '../components/BlogPost.astro'
+
+import Layout from '../layouts/Layout.astro'
+import PageTitle from '../components/PageTitle.astro'
+import PageSection from '../components/PageSection.astro'
+import PageSectionTitle from '../components/PageSectionTitle.astro'
+
+const allPosts = await getCollection('posts')
+---
+
+<Layout title="wadamek65 | blog">
+	<PageTitle>blog</PageTitle>
+	<PageSection>
+		<div class="mb-4 flex justify-center">
+			<video
+				src="/0607.mp4"
+				autoplay="autoplay"
+				muted="muted"
+				loop="loop"
+				width="150"
+				height="150"
+				class="rounded-full border-2 border-st-tropaz-700"></video>
+		</div>
+		<p>Welcome to our blog. I'm only the editor though.</p>
+	</PageSection>
+	<PageSection>
+		<PageSectionTitle>posts</PageSectionTitle>
+		<ul>
+			{
+				allPosts.map((post) => (
+					<BlogPost
+						coverImage={post.data.coverImage}
+						href={`/blog/${post.slug}`}
+						publishedDate={post.data.publishedDate}
+						tags={post.data.tags}
+						title={post.data.title}
+					/>
+				))
+			}
+		</ul>
+	</PageSection>
+</Layout>

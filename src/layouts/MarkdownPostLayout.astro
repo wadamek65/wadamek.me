@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+
+import FormattedDate from '../components/FormattedDate.astro'
+import CopyLinkButton from '../components/CopyLinkButton.astro'
+
+interface Props {
+	readTime: string
+	frontmatter: unknown
+}
+const { frontmatter, readTime } = Astro.props
+---
+
+<article class="prose lg:prose-xl">
+	<h1 class="!mb-2">{frontmatter.title}</h1>
+	<div class="flex justify-between">
+		<div>
+			<FormattedDate date={frontmatter.publishedDate} />
+			-
+			{readTime}
+		</div>
+		<CopyLinkButton />
+	</div>
+	<Image
+		class="rounded-xl"
+		alt={frontmatter.coverImage.alt}
+		src={frontmatter.coverImage.src}
+		inferSize="true"
+		loading="eager"
+	/>
+	<slot />
+</article>

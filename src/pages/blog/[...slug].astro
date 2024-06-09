@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content'
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro'
+import H2 from '../../components/Markdown/H2.astro'
+import H3 from '../../components/Markdown/H3.astro'
+import H4 from '../../components/Markdown/H4.astro'
+import Layout from '../../layouts/Layout.astro'
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('posts')
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}))
+}
+
+const { entry } = Astro.props
+const { Content, remarkPluginFrontmatter, components } = await entry.render()
+---
+
+<Layout title={`wadamek65 | ${entry.data.title}`}>
+	<MarkdownPostLayout frontmatter={entry.data} readTime={remarkPluginFrontmatter.minutesRead}>
+		<Content components={{ ...components, h2: H2, h3: H3, h4: H4 }} />
+	</MarkdownPostLayout>
+</Layout>

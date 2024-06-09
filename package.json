@@ -1,30 +1,36 @@
 {
-	"name": "nextjs",
-	"version": "0.1.0",
-	"private": true,
+	"name": "milky-way",
+	"type": "module",
+	"version": "1.0.0",
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"format": "prettier . --write"
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier --write . && eslint --fix ."
 	},
 	"dependencies": {
-		"next": "14.1.0",
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"@astrojs/mdx": "3.1.0",
+		"@astrojs/rss": "^4.0.6",
+		"@astrojs/tailwind": "5.1.0",
+		"@astrojs/vercel": "^7.6.0",
+		"@sentry/astro": "8.8.0",
+		"astro": "4.9.2",
+		"astro-icon": "^1.1.0",
+		"markdown-it": "14.1.0",
+		"mdast-util-to-string": "4.0.0",
+		"reading-time": "1.5.0",
+		"sanitize-html": "2.13.0",
+		"tailwindcss": "3.4.3"
 	},
 	"devDependencies": {
-		"@types/node": "20.11.17",
-		"@types/react": "18.2.55",
-		"@types/react-dom": "18.2.19",
-		"autoprefixer": "10.4.17",
-		"eslint": "8.56.0",
-		"eslint-config-next": "14.1.0",
-		"eslint-config-prettier": "9.1.0",
-		"postcss": "8.4.35",
-		"prettier": "3.2.5",
-		"tailwindcss": "3.4.1",
-		"typescript": "5.3.3"
+		"@tailwindcss/typography": "0.5.13",
+		"@typescript-eslint/parser": "8.0.0-alpha.26",
+		"eslint": "9.4.0",
+		"eslint-plugin-astro": "1.2.0",
+		"prettier": "3.3.0",
+		"prettier-plugin-astro": "0.14.0",
+		"prettier-plugin-tailwindcss": "0.6.1"
 	}
 }

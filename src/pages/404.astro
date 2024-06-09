@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '../layouts/Layout.astro'
+import image404 from '../media/404-1.webp'
+---
+
+<Layout title="wadamek65 | not found">
+	<div class="text-center">
+		<h1 class="text-6xl">not found</h1>
+		<Image src={image404} inferSize="true" alt="Lost parrot" loading="eager" class="my-8" />
+		<a
+			class="text-xl font-bold text-puerto-rico-500 decoration-puerto-rico-500 decoration-2 underline-offset-4 hover:underline focus:underline"
+			href="/">Return Home</a
+		>
+	</div>
+</Layout>

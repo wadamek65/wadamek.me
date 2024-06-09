@@ -1,0 +1,9 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { name, href, alt } = Astro.props
+---
+
+<a href={href} target="_blank" aria-label={alt} class="hover:text-puerto-rico-400">
+	<Icon class="size-8" name={name} />
+</a>

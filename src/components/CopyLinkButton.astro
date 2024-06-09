@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="relative">
+	<button
+		aria-label="Copy link to clipboard"
+		class="not-prose rounded-lg border-2 border-puerto-rico-300 text-puerto-rico-300 hover:border-puerto-rico-200 hover:text-puerto-rico-200"
+		id="copy-link-button"><Icon class="h-8 w-8 p-1" name="link" /></button
+	>
+	<div
+		id="copied-notification"
+		class="absolute -right-16 top-10 w-32 text-xs opacity-0 transition-opacity duration-700"
+	>
+		Copied to clipboard
+	</div>
+</div>
+
+<script is:inline>
+	function copyPostLinkToClipboard() {
+		navigator.clipboard.writeText(window.location.href)
+		const copiedNotification = document.querySelector('#copied-notification')
+		copiedNotification.classList.add('opacity-100')
+		setTimeout(() => copiedNotification.classList.remove('opacity-100'), 3000)
+	}
+
+	document
+		.querySelectorAll('#copy-link-button')
+		.forEach((button) => button.addEventListener('click', copyPostLinkToClipboard))
+</script>
