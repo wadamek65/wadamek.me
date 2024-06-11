@@ -13,7 +13,10 @@ import parrotVideo from '../media/parrot_video_resized.webm'
 const allPosts = await getCollection('posts')
 ---
 
-<Layout title="wadamek65 | blog">
+<Layout
+	title="blog"
+	description="wadamek65's blog containing post about various software engineering topics."
+>
 	<PageTitle>blog</PageTitle>
 	<PageSection>
 		<div class="mb-4 flex justify-center">
@@ -36,7 +39,7 @@ const allPosts = await getCollection('posts')
 					<BlogPost
 						coverImage={post.data.coverImage}
 						href={`/blog/${post.slug}`}
-						publishedDate={post.data.publishedDate}
+						publishedTime={post.data.publishedTime}
 						tags={post.data.tags}
 						title={post.data.title}
 					/>

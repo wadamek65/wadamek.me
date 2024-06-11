@@ -2,34 +2,64 @@
 import SpeedInsights from '@vercel/speed-insights/astro'
 import { ViewTransitions } from 'astro:transitions'
 import { fade } from 'astro:transitions'
+import { SEO } from 'astro-seo'
 
 import Header from '../components/Header.astro'
 import '../styles/global.css'
 import PostHog from '../components/PostHog.astro'
 
-const { title } = Astro.props
+const { title, description, openGraph, twitterImageAlt } = Astro.props
+import profilePicture from '../media/profile_picture.png'
+
+const defaultImage = profilePicture.src
+const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulder.'
 ---
 
 <!doctype html>
 <html transition:animate="none" lang="en" class="bg-remy-100 text-mirage-950">
 	<head>
-		<title>{title}</title>
-		<link rel="icon" type="image/svg+xml" href="/parrot_favicon_cropped.svg" />
-		<meta charset="utf-8" />
-		<meta name="description" content="Personal website of wadamek65" />
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/parrot_favicon_cropped.svg" />
 		<link
 			rel="alternate"
 			type="application/rss+xml"
 			title="wadamek65 blog"
 			href={`${Astro.site}rss.xml`}
 		/>
-		<meta name="generator" content={Astro.generator} />
+
+		<SEO
+			title={title}
+			titleTemplate="wadamek65 | %s"
+			titleDefault="wadamek65 website"
+			description={description}
+			openGraph={{
+				image: {
+					alt: defaultAlt,
+				},
+				basic: {
+					title: title,
+					type: 'website',
+					image: defaultImage,
+				},
+				...(openGraph ?? {}),
+			}}
+			twitter={{
+				creator: '@wadamek65',
+				site: '@wadamek65',
+				title: openGraph?.basic?.title ?? title,
+				image: openGraph?.basic?.image ?? defaultImage,
+				description: openGraph?.basic?.description ?? description,
+				imageAlt: twitterImageAlt ?? defaultAlt,
+			}}
+		/>
+
 		<ViewTransitions />
 		<PostHog />
+		<SpeedInsights />
 	</head>
 	<body class="mx-auto mb-16 max-w-screen-sm text-justify">
-		<SpeedInsights />
 		<Header />
 		<main class="px-8 sm:px-0" transition:animate={fade({ duration: '0.2s' })}>
 			<slot />

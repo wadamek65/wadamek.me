@@ -15,7 +15,7 @@ const { frontmatter, readTime } = Astro.props
 	<h1 class="!mb-2">{frontmatter.title}</h1>
 	<div class="flex justify-between">
 		<div>
-			<FormattedDate date={frontmatter.publishedDate} />
+			<FormattedDate date={frontmatter.publishedTime} />
 			-
 			{readTime}
 		</div>

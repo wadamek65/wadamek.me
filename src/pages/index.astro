@@ -7,7 +7,10 @@ import PageTitle from '../components/PageTitle.astro'
 import PageSectionTitle from '../components/PageSectionTitle.astro'
 ---
 
-<Layout title="wadamek65 | home">
+<Layout
+	title="home"
+	description="wadamek65's website's homepage with contact information and blog."
+>
 	<PageTitle>home</PageTitle>
 	<PageSection>
 		<div class="mb-4 flex justify-center">
@@ -20,7 +23,8 @@ import PageSectionTitle from '../components/PageSectionTitle.astro'
 	</PageSection>
 	<PageSection>
 		<PageSectionTitle>socials</PageSectionTitle>
-		<div class="mb-2 flex gap-x-4">
+		<p>I'm not very active on social media but I suppose you can reach me there.</p>
+		<div class="mb-2 mt-2 flex gap-x-4">
 			<IconLink name="github" alt="GitHub profile link" href="https://github.com/wadamek65" />
 			<IconLink
 				name="linkedin"
@@ -28,11 +32,6 @@ import PageSectionTitle from '../components/PageSectionTitle.astro'
 				href="https://www.linkedin.com/in/wadamek65/"
 			/>
 			<IconLink name="x" alt="X profile link" href="https://x.com/wadamek65" />
-			<!--<SocialsIcon-->
-			<!--	name="discord"-->
-			<!--	alt="Discord profile link"-->
-			<!--	href="https://discord.com/users/1062147699056586894"-->
-			<!--/>-->
 			<IconLink
 				name="soundcloud"
 				alt="SoundCloud profile link"

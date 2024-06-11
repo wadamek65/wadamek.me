@@ -8,11 +8,12 @@ interface Props {
 		alt: string
 	}
 	href: string
-	publishedDate: Date
+	publishedTime: Date
+	modifiedTime: Date
 	tags: string[]
 	title: string
 }
-const { title, href, coverImage, publishedDate, tags } = Astro.props
+const { title, href, coverImage, publishedTime, tags } = Astro.props
 ---
 
 <li class="transition-transform hover:scale-[1.02]">
@@ -36,7 +37,7 @@ const { title, href, coverImage, publishedDate, tags } = Astro.props
 		</h3>
 
 		<div class="justify-start self-center text-sm text-st-tropaz-700 sm:self-start">
-			<FormattedDate date={publishedDate} />
+			<FormattedDate date={publishedTime} />
 		</div>
 
 		<div
