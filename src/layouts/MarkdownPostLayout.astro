@@ -3,6 +3,9 @@ import { Image } from 'astro:assets'
 
 import FormattedDate from '../components/FormattedDate.astro'
 import CopyLinkButton from '../components/CopyLinkButton.astro'
+import ProfilePicture from '../components/ProfilePicture.astro'
+import IconLink from '../components/IconLink.astro'
+import { Icon } from 'astro-icon/components'
 
 interface Props {
 	readTime: string
@@ -11,7 +14,7 @@ interface Props {
 const { frontmatter, readTime } = Astro.props
 ---
 
-<article class="prose lg:prose-xl">
+<article class="prose prose-a:text-remy-700 prose-a:no-underline hover:prose-a:underline">
 	<h1 class="!mb-2">{frontmatter.title}</h1>
 	<div class="flex justify-between">
 		<div>
@@ -29,4 +32,31 @@ const { frontmatter, readTime } = Astro.props
 		loading="eager"
 	/>
 	<slot />
+	<section>
+		<hr class="border-dashed border-puerto-rico-400" />
+		<div class="flex justify-center">
+			<ProfilePicture width={75} height={75} />
+		</div>
+
+		<div class="not-prose flex justify-center gap-x-2 text-center text-st-tropaz-700">
+			<a
+				class="text-xl decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+				href="/">home</a
+			>
+			&bull;
+			<a
+				class="text-xl decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+				href="/blog/">blog</a
+			>
+			&bull;
+			<IconLink name="github" alt="GitHub profile link" href="https://github.com/wadamek65" />
+		</div>
+		<div class="not-prose mt-6 flex justify-center">
+			<a
+				class="flex items-center text-sm text-st-tropaz-700 decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
+				href="/rss.xml"
+				target="_blank">RSS<Icon class="ml-1 inline size-4" name="rss" /></a
+			>
+		</div>
+	</section>
 </article>
