@@ -8,7 +8,8 @@ coverImage:
   alt: 'AI generated art of a parrot painting on a computer screen'
 tags: ['productivity']
 ---
-import { Image } from 'astro:assets';
+
+import { Image } from 'astro:assets'
 
 import findingSolutions from '../../media/finding solutions-4.png'
 import varyYourInputs from '../../media/vary your inputs-2.png'
@@ -26,17 +27,14 @@ This post does not contain any revolutionary problem-solving methods. Despite th
 Disregarding programming for a moment, let’s focus on the definition of creativity. According to [Wikipedia](https://en.wikipedia.org/wiki/Creativity):
 
 > Creativity is a characteristic of someone (or some process) that forms something novel and valuable. The created item may be intangible (such as an idea, a scientific theory, a musical composition, or a joke) or a physical object (such as an invention, a printed literary work, or a painting). Creativity enables people to solve problems in new or innovative ways.
->
 
 From an artist’s perspective, as described by the legend of the music industry, [Rick Rubin](https://en.wikipedia.org/wiki/Rick_Rubin) in his book “The Creative Act”:
 
 > Creativity is not a rare ability. It is not difficult to access. Creativity is a fundamental aspect of being human. It’s our birthright. And it’s for all of us.
->
 
 And to expand upon it, he says:
 
 > Creativity is a way of moving through the world, every minute, every day. Once you acquiesce to the demands of the creative life, it becomes a part of you. Even in the midst of a project, you still look for new ideas each day. At any moment, you're prepared to stop what you're doing to make a note or a drawing, or capture a fleeting thought. It becomes second nature. And we're always in it, every hour of the day. Staying in it means a commitment to remain open to what's around you. Paying attention and listening. Looking for connections and relationships in the outside world. Searching for beauty. Seeking stories. Noticing what you find interesting, what makes you lean forward. And knowing all of this is available to use next time you sit down to work, where the raw data gets put into form. There is no telling where that next great story, painting, recipe, or business idea is going to come from. Just as a surfer can't control the waves, artists are at the mercy of the creative rhythms of nature. This is why it's of such great importance to remain aware and present at all times. Watching and waiting.
->
 
 ## Creativity at work
 
@@ -55,7 +53,13 @@ There is one crucial thing to understand here. The part of our minds that is bes
 As a developer, have you ever felt stuck on a problem that you couldn’t solve for hours? And the moment you go take a shower and stop thinking about it the solution suddenly appears in your head? That’s your subconscious at work.
 
 <div class="flex justify-center">
-<Image class="border-2 border-puerto-rico-300" src={findingSolutions} width={400} height={400} alt="A puzzle with two missing pieces. One unrelated piece lies in the conscious. Many more pieces including the missing ones lie in the subconscious." />
+	<Image
+		class="border-2 border-puerto-rico-300"
+		src={findingSolutions}
+		width={400}
+		height={400}
+		alt="A puzzle with two missing pieces. One unrelated piece lies in the conscious. Many more pieces including the missing ones lie in the subconscious."
+	/>
 </div>
 
 ## Is the bathroom the optimal workstation?
@@ -87,10 +91,16 @@ Another one is Miles Lowell Edwards, who was an engineer who worked at a pump co
 And to further get my point across, a quote from Rick Rubin:
 
 > To vary your inspiration, consider varying your inputs. Turn the sound off to watch a film, listen to the same song on repeat, read only the first word of each sentence in a short story, arrange stones by size or color, learn to lucid dream. Break habits. Look for differences. Notice connections.
->
 
 <div class="flex justify-center">
-	<Image quality={100} class="border-2 border-puerto-rico-300" src={varyYourInputs} width={400} height={400} alt="Visual comparison of the 3 of the same inputs producing a weak output, but 3 different inputs producing a much stronger one." />
+	<Image
+		quality={100}
+		class="border-2 border-puerto-rico-300"
+		src={varyYourInputs}
+		width={400}
+		height={400}
+		alt="Visual comparison of the 3 of the same inputs producing a weak output, but 3 different inputs producing a much stronger one."
+	/>
 </div>
 
 ## The creative side of writing code
@@ -98,7 +108,6 @@ And to further get my point across, a quote from Rick Rubin:
 Is programming a job that requires creativity or not? Well on a surface level, you may say that it isn’t. For the most part, it requires a lot of technical and scientific knowledge. However, this gets more interesting **the higher up** the seniority ladder we look.
 
 Have you ever been stuck on a problem that no amount of Googling or research could solve? A problem so similar to the one all the other people are having but just a little bit different enough to not be solvable by all the solutions you can find on the internet.
-
 
 This is where higher seniority developers are expected to somehow solve them or propose an alternative despite that fact. Whether it be by a clever workaround, a hack, diving deeper into the cause of the problem, etc.<AdditionalText text="No I do not approve of lazy hacks instead of proper solutions" />. The possibilities are endless, which is where **creativity** comes into play. Different problems may require vastly different solutions.
 Not necessarily only code-related problems. Sometimes you may have issues on the process level, or the management level.
@@ -114,7 +123,6 @@ These times too you may need to get creative to figure out what works best for y
 Apologies if you’re bored by all the quotes, but here is the last one to cement what I’m trying to convey to you. Steve Jobs on creativity:
 
 > Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while. That’s because they were able to connect experiences they’ve had and synthesize new things. And the reason they were able to do that was that they’ve had more experiences or they have thought more about their experiences than other people. Unfortunately, that’s too rare a commodity. A lot of people in our industry haven’t had very diverse experiences. So they don’t have enough dots to connect, and they end up with very linear solutions without a broad perspective on the problem. The broader one’s understanding of the human experience, the better design we will have.
->
 
 ### Getting unstuck
 
@@ -129,7 +137,14 @@ As a last resort, you could also work on something else and come back to the iss
 Thinking outside the box is boring. Thinking inside the box and being able to solve your problems with constraints is where it gets interesting. In commercial projects, the constraint is most often either time or money, or both. This is unfortunately often accompanied by stress. However, if you’re able to fight it back, times like these are where you can **really shine** as a developer.
 
 <div class="flex justify-center">
-	<Image quality={100} class="border-2 border-puerto-rico-300" src={problemsWithConstraints} width={400} height={400} alt="A box with the inside segmented onto multiple unusual shapes with different colors that cleanly fill in the whole box. Another box with the same pieces but scattered everywhere due to the box being much larger." />
+	<Image
+		quality={100}
+		class="border-2 border-puerto-rico-300"
+		src={problemsWithConstraints}
+		width={400}
+		height={400}
+		alt="A box with the inside segmented onto multiple unusual shapes with different colors that cleanly fill in the whole box. Another box with the same pieces but scattered everywhere due to the box being much larger."
+	/>
 </div>
 
 Having an infinite amount of time to deliver something is easy—simple trial and error. Having a time constraint though is where you will need to start thinking about how to do it. Consider tradeoffs. For example:
