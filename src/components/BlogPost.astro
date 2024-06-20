@@ -1,19 +1,19 @@
 ---
-import { Image } from 'astro:assets'
-import FormattedDate from './FormattedDate.astro'
+import { Image } from 'astro:assets';
+import FormattedDate from './FormattedDate.astro';
 
 interface Props {
 	coverImage: {
-		src: string
-		alt: string
-	}
-	href: string
-	publishedTime: Date
-	modifiedTime: Date
-	tags: string[]
-	title: string
+		src: string;
+		alt: string;
+	};
+	href: string;
+	publishedTime: Date;
+	modifiedTime: Date;
+	tags: string[];
+	title: string;
 }
-const { title, href, coverImage, publishedTime, tags } = Astro.props
+const { title, href, coverImage, publishedTime, tags } = Astro.props;
 ---
 
 <li class="transition-transform hover:scale-[1.02]">

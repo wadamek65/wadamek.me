@@ -1,17 +1,17 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from 'astro:assets';
 
-import FormattedDate from '../components/FormattedDate.astro'
-import CopyLinkButton from '../components/CopyLinkButton.astro'
-import ProfilePicture from '../components/ProfilePicture.astro'
-import IconLink from '../components/IconLink.astro'
-import { Icon } from 'astro-icon/components'
+import FormattedDate from '../components/FormattedDate.astro';
+import CopyLinkButton from '../components/CopyLinkButton.astro';
+import ProfilePicture from '../components/ProfilePicture.astro';
+import IconLink from '../components/IconLink.astro';
+import { Icon } from 'astro-icon/components';
 
 interface Props {
-	readTime: string
-	frontmatter: unknown
+	readTime: string;
+	frontmatter: unknown;
 }
-const { frontmatter, readTime } = Astro.props
+const { frontmatter, readTime } = Astro.props;
 ---
 
 <article

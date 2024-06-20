@@ -1,16 +1,16 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content';
 
-import BlogPost from '../components/BlogPost.astro'
+import BlogPost from '../components/BlogPost.astro';
 
-import Layout from '../layouts/Layout.astro'
-import PageTitle from '../components/PageTitle.astro'
-import PageSection from '../components/PageSection.astro'
-import PageSectionTitle from '../components/PageSectionTitle.astro'
+import Layout from '../layouts/Layout.astro';
+import PageTitle from '../components/PageTitle.astro';
+import PageSection from '../components/PageSection.astro';
+import PageSectionTitle from '../components/PageSectionTitle.astro';
 
-import parrotVideo from '../media/parrot_video_resized.webm'
+import parrotVideo from '../media/parrot_video_resized.webm';
 
-const allPosts = await getCollection('posts')
+const allPosts = await getCollection('posts');
 ---
 
 <Layout

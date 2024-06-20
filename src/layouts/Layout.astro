@@ -1,18 +1,18 @@
 ---
-import SpeedInsights from '@vercel/speed-insights/astro'
-import { ViewTransitions } from 'astro:transitions'
-import { fade } from 'astro:transitions'
-import { SEO } from 'astro-seo'
+import SpeedInsights from '@vercel/speed-insights/astro';
+import { ViewTransitions } from 'astro:transitions';
+import { fade } from 'astro:transitions';
+import { SEO } from 'astro-seo';
 
-import Header from '../components/Header.astro'
-import '../styles/global.css'
-import PostHog from '../components/PostHog.astro'
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+import PostHog from '../components/PostHog.astro';
 
-const { title, description, openGraph, twitterImageAlt } = Astro.props
-import profilePicture from '../media/profile_picture.png'
+const { title, description, openGraph, twitterImageAlt } = Astro.props;
+import profilePicture from '../media/profile_picture.png';
 
-const defaultImage = profilePicture.src
-const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulder.'
+const defaultImage = profilePicture.src;
+const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulder.';
 ---
 
 <!doctype html>
@@ -70,14 +70,14 @@ const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulde
 					localStorage.theme === 'light' ||
 					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)
 				) {
-					document.documentElement.classList.add('light')
+					document.documentElement.classList.add('light');
 				} else {
-					document.documentElement.classList.remove('light')
+					document.documentElement.classList.remove('light');
 				}
 			}
 
-			colorMode()
-			document.addEventListener('astro:after-swap', colorMode)
+			colorMode();
+			document.addEventListener('astro:after-swap', colorMode);
 		</script>
 	</body>
 </html>

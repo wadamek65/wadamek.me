@@ -1,10 +1,10 @@
-import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
-import { remarkReadingTime } from './remark-reading-time.mjs'
-import mdx from '@astrojs/mdx'
-import sentry from '@sentry/astro'
-import icon from 'astro-icon'
-import sitemap from '@astrojs/sitemap'
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import { remarkReadingTime } from './remark-reading-time.mjs';
+import mdx from '@astrojs/mdx';
+import sentry from '@sentry/astro';
+import icon from 'astro-icon';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,4 +29,4 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 	},
-})
+});

@@ -1,12 +1,12 @@
-import rss from '@astrojs/rss'
-import { getCollection } from 'astro:content'
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 // import MarkdownIt from 'markdown-it'
 // import sanitizeHtml from 'sanitize-html'
 
 // const parser = new MarkdownIt()
 
 export async function GET(context) {
-	const posts = await getCollection('posts')
+	const posts = await getCollection('posts');
 
 	return rss({
 		stylesheet: '/rss-styles.xsl',
@@ -23,5 +23,5 @@ export async function GET(context) {
 			// 	allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
 			// }),
 		})),
-	})
+	});
 }

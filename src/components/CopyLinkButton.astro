@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from 'astro-icon/components';
 ---
 
 <div class="relative">
@@ -18,13 +18,13 @@ import { Icon } from 'astro-icon/components'
 
 <script is:inline>
 	function copyPostLinkToClipboard() {
-		navigator.clipboard.writeText(window.location.href)
-		const copiedNotification = document.querySelector('#copied-notification')
-		copiedNotification.classList.add('opacity-100')
-		setTimeout(() => copiedNotification.classList.remove('opacity-100'), 3000)
+		navigator.clipboard.writeText(window.location.href);
+		const copiedNotification = document.querySelector('#copied-notification');
+		copiedNotification.classList.add('opacity-100');
+		setTimeout(() => copiedNotification.classList.remove('opacity-100'), 3000);
 	}
 
 	document
 		.querySelectorAll('#copy-link-button')
-		.forEach((button) => button.addEventListener('click', copyPostLinkToClipboard))
+		.forEach((button) => button.addEventListener('click', copyPostLinkToClipboard));
 </script>

@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection, z } from 'astro:content';
 
 const postsCollection = defineCollection({
 	type: 'content',
@@ -11,8 +11,8 @@ const postsCollection = defineCollection({
 			coverImage: z.object({ src: image(), alt: z.string() }),
 			tags: z.array(z.string()),
 		}),
-})
+});
 
 export const collections = {
 	posts: postsCollection,
-}
+};
