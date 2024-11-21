@@ -1,0 +1,69 @@
+<div id="mlb2-20061353" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-20061353">
+	<div>
+		<div>
+			<div>
+				<div class="mb-16">
+					<p>
+						If you'd like to receive updates about the things I work on and news from the web dev
+						world, subscribe below.
+					</p>
+				</div>
+				<form
+					class="flex justify-center"
+					action="https://assets.mailerlite.com/jsonp/1199328/forms/138642977825228687/subscribe"
+					data-code=""
+					method="post"
+					id="email-form"
+					target="_blank"
+				>
+					<div class="flex h-16 items-center gap-8">
+						<input
+							aria-label="email"
+							aria-required="true"
+							type="email"
+							class="border-b-2 border-puerto-rico-400 bg-remy-100 p-1 text-lg hover:border-b-[3px] focus:border-b-[3px]"
+							data-inputmask=""
+							name="fields[email]"
+							placeholder="email"
+							autocomplete="email"
+							required
+						/>
+						<input type="hidden" name="ml-submit" value="1" />
+						<button
+							type="submit"
+							class="rounded-xl bg-puerto-rico-600 px-6 py-1 text-lg text-puerto-rico-50 ring-puerto-rico-300 ring-offset-2 hover:ring-2"
+						>
+							subscribe
+						</button>
+						<button disabled="disabled" style="display: none;" type="button">
+							<div class="ml-form-embedSubmitLoad"></div>
+							<span class="sr-only">Loading...</span>
+						</button>
+
+						<input type="hidden" name="anticsrf" value="true" />
+					</div>
+				</form>
+			</div>
+
+			<div id="success-message" class="hidden text-center">
+				<p>Thank you for subscribing! Check your inbox for a confirmation email.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script is:inline>
+	function ml_webform_success_20061353() {
+		document.getElementById('success-message')?.classList.remove('hidden');
+		document.getElementById('email-form')?.classList.add('hidden');
+	}
+</script>
+
+<script
+	is:inline
+	src="https://groot.mailerlite.com/js/w/webforms.min.js?v2d8fb22bb5b3677f161552cd9e774127"
+	type="text/javascript"></script>
+
+<script>
+	fetch('https://assets.mailerlite.com/jsonp/1199328/forms/138642977825228687/takel');
+</script>

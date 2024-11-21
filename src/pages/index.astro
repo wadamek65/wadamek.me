@@ -1,19 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProfilePicture from '../components/ProfilePicture.astro';
-import IconLink from '../components/IconLink.astro';
+import Link from '../components/Link.astro';
 import PageSection from '../components/PageSection.astro';
-import PageTitle from '../components/PageTitle.astro';
 import PageSectionTitle from '../components/PageSectionTitle.astro';
+import Newsletter from '../components/Newsletter.astro';
 ---
 
 <Layout
 	title="home"
 	description="wadamek65's website's homepage with contact information and blog."
 >
-	<PageTitle>home</PageTitle>
 	<PageSection>
-		<div class="mb-4 flex justify-center">
+		<div class="mb-8 flex justify-center">
 			<ProfilePicture />
 		</div>
 		<p>
@@ -24,24 +23,20 @@ import PageSectionTitle from '../components/PageSectionTitle.astro';
 	<PageSection>
 		<PageSectionTitle>socials</PageSectionTitle>
 		<p>I'm not very active on social media but I suppose you can reach me there.</p>
-		<div class="mb-2 mt-2 flex gap-x-4">
-			<IconLink name="github" alt="GitHub profile link" href="https://github.com/wadamek65" />
-			<IconLink name="x" alt="X profile link" href="https://x.com/wadamek65" />
-			<IconLink
-				name="soundcloud"
-				alt="SoundCloud profile link"
-				href="https://soundcloud.com/voy-347736249"
-			/>
-			<IconLink name="reddit" alt="Reddit profile link" href="https://reddit.com/u/wadamek65" />
-			<IconLink
-				name="linkedin"
-				alt="LinkedIn profile link"
-				href="https://www.linkedin.com/in/wadamek65/"
-			/>
+		<div class="mb-4 mt-8 flex flex-wrap justify-center gap-x-3 sm:justify-start">
+			<Link href="https://github.com/wadamek65">github</Link>|
+			<Link href="https://bsky.app/profile/wadamek.bsky.social">bluesky</Link>|
+			<Link href="https://reddit.com/u/wadamek65">reddit</Link>|
+			<Link href="https://www.linkedin.com/in/wadamek65/">linkedin</Link>|
+			<Link href="https://soundcloud.com/voy-347736249">soundcloud</Link>|
+			<span>wadamek@wadamek.me</span>
 		</div>
-		e-mail: wadamek@wadamek.me
 		<div class="text-xs">
 			If someone knows how to get the AI to get the colors of my parrot right please let me know!
 		</div>
+	</PageSection>
+	<PageSection>
+		<PageSectionTitle>newsletter</PageSectionTitle>
+		<Newsletter />
 	</PageSection>
 </Layout>
