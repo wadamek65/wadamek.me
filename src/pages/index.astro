@@ -7,23 +7,19 @@ import PageSectionTitle from '../components/PageSectionTitle.astro';
 import Newsletter from '../components/Newsletter.astro';
 ---
 
-<Layout
-	title="home"
-	description="wadamek65's website's homepage with contact information and blog."
->
+<Layout title="home" description="wadamek.me homepage with contact information.">
 	<PageSection>
 		<div class="mb-8 flex justify-center">
 			<ProfilePicture />
 		</div>
 		<p>
-			Hi, I'm Wojciech. I'm a full stack web developer/software architect/tech lead. I don't know
-			what I'm going to do with this website yet. Hopefully I'll figure it out with time.
+			Hi, I'm Wojciech. I'm a full stack web developer/software architect/tech lead. You can
+			discover and follow all my work from here.
 		</p>
 	</PageSection>
 	<PageSection>
 		<PageSectionTitle>socials</PageSectionTitle>
-		<p>I'm not very active on social media but I suppose you can reach me there.</p>
-		<div class="mb-4 mt-8 flex flex-wrap justify-center gap-x-3 sm:justify-start">
+		<div class="mb-4 flex flex-wrap justify-center gap-x-3 sm:justify-start">
 			<Link href="https://github.com/wadamek65">github</Link>|
 			<Link href="https://bsky.app/profile/wadamek.bsky.social">bluesky</Link>|
 			<Link href="https://reddit.com/u/wadamek65">reddit</Link>|
