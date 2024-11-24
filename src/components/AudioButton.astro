@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+interface Props {
+	audioSrc: string;
+	altText: string;
+}
+
+const { audioSrc, altText } = Astro.props;
+---
+
+<button data-audiobutton data-href={audioSrc} aria-label={altText} class="ml-2">
+	<Icon class="size-4 text-mirage-950" name="audio" />
+</button>
+
+<script>
+	const buttons = document.querySelectorAll('button[data-audiobutton]');
+
+	buttons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const href = button.getAttribute('data-href');
+			if (!href) {
+				return;
+			}
+
+			new Audio(href).play();
+		});
+	});
+</script>

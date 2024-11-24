@@ -5,6 +5,9 @@ import Link from '../components/Link.astro';
 import PageSection from '../components/PageSection.astro';
 import PageSectionTitle from '../components/PageSectionTitle.astro';
 import Newsletter from '../components/Newsletter.astro';
+import wojtekPronunciation from '../media/pl_wojtek.ogg';
+import wojciechPronunciation from '../media/pl_wojciech.ogg';
+import AudioButton from '../components/AudioButton.astro';
 ---
 
 <Layout title="home" description="wadamek.me homepage with contact information.">
@@ -13,8 +16,14 @@ import Newsletter from '../components/Newsletter.astro';
 			<ProfilePicture />
 		</div>
 		<p>
-			Hi, I'm Wojciech. I'm a full stack web developer/software architect/tech lead. You can
-			discover and follow all my work from here.
+			Hi, I'm Wojciech <i>(Voy-chekh)</i><AudioButton
+				audioSrc={wojciechPronunciation}
+				altText="Play Wojciech Pronunciation"
+			/>, but you can also call me Wojtek<AudioButton
+				audioSrc={wojtekPronunciation}
+				altText="Play Wojciech Pronunciation"
+			/>. I'm a full stack web developer/software architect/tech lead. You can discover and follow
+			all my work from here.
 		</p>
 	</PageSection>
 	<PageSection>
