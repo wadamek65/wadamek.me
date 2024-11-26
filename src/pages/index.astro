@@ -29,11 +29,11 @@ import AudioButton from '../components/AudioButton.astro';
 	<PageSection>
 		<PageSectionTitle>socials</PageSectionTitle>
 		<div class="mb-4 flex flex-wrap justify-center gap-x-6 gap-y-4 sm:justify-start sm:gap-x-3">
-			<Link href="https://github.com/wadamek65">github</Link>|
-			<Link href="https://bsky.app/profile/wadamek.bsky.social">bluesky</Link>|
-			<Link href="https://reddit.com/u/wadamek65">reddit</Link>|
-			<Link href="https://www.linkedin.com/in/wadamek65/">linkedin</Link>|
-			<Link href="https://soundcloud.com/voy-347736249">soundcloud</Link>|
+			<Link target="_blank" href="https://github.com/wadamek65">github</Link>|
+			<Link target="_blank" href="https://bsky.app/profile/wadamek.bsky.social">bluesky</Link>|
+			<Link target="_blank" href="https://reddit.com/u/wadamek65">reddit</Link>|
+			<Link target="_blank" href="https://www.linkedin.com/in/wadamek65/">linkedin</Link>|
+			<Link target="_blank" href="https://soundcloud.com/voy-347736249">soundcloud</Link>|
 			<span>wadamek@wadamek.me</span>
 		</div>
 		<div class="text-xs">
@@ -42,6 +42,13 @@ import AudioButton from '../components/AudioButton.astro';
 	</PageSection>
 	<PageSection>
 		<PageSectionTitle>newsletter</PageSectionTitle>
-		<Newsletter />
+		<Newsletter>
+			<div class="mb-16">
+				<p>
+					If you'd like to receive updates about the things I work on and news from the web dev
+					world, subscribe below.
+				</p>
+			</div>
+		</Newsletter>
 	</PageSection>
 </Layout>

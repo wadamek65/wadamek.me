@@ -34,6 +34,9 @@ importers:
       astro-seo:
         specifier: 0.8.4
         version: 0.8.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
       markdown-it:
         specifier: 14.1.0
         version: 14.1.0
@@ -46,6 +49,9 @@ importers:
       sanitize-html:
         specifier: 2.13.1
         version: 2.13.1
+      tailwind-merge:
+        specifier: 2.5.5
+        version: 2.5.5
       tailwindcss:
         specifier: 3.4.15
         version: 3.4.15
@@ -5389,6 +5395,12 @@ packages:
       }
     engines: { node: ^14.18.0 || >=16.0.0 }
 
+  tailwind-merge@2.5.5:
+    resolution:
+      {
+        integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==,
+      }
+
   tailwindcss@3.4.15:
     resolution:
       {
@@ -9859,6 +9871,8 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.1.1
       tslib: 2.8.1
+
+  tailwind-merge@2.5.5: {}
 
   tailwindcss@3.4.15:
     dependencies:

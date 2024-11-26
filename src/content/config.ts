@@ -10,6 +10,7 @@ const postsCollection = defineCollection({
 			modifiedTime: z.date(),
 			coverImage: z.object({ src: image(), alt: z.string() }),
 			tags: z.array(z.string()),
+			blueskyPostId: z.string(),
 		}),
 });
 

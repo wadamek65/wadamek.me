@@ -1,14 +1,17 @@
 ---
-interface Props {
-	href: string;
-}
-const { href } = Astro.props;
+import type { HTMLAttributes } from 'astro/types';
+import { cn } from '../lib/cn';
+
+type Props = HTMLAttributes<'a'>;
+const { class: className, ...props } = Astro.props;
 ---
 
 <a
-	href={href}
-	target="_blank"
-	class="text-puerto-rico-600 hover:text-puerto-rico-300 hover:underline"
+	{...props}
+	class={cn(
+		'text-puerto-rico-600 decoration-puerto-rico-300 decoration-2 underline-offset-4 hover:text-puerto-rico-300 hover:underline focus:underline',
+		className,
+	)}
 >
 	<slot />
 </a>

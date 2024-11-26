@@ -6,12 +6,32 @@ import CopyLinkButton from '../components/CopyLinkButton.astro';
 import ProfilePicture from '../components/ProfilePicture.astro';
 import IconLink from '../components/IconLink.astro';
 import { Icon } from 'astro-icon/components';
+import Newsletter from '../components/Newsletter.astro';
+import BlogComments from '../components/BlogComments.astro';
+import Link from '../components/Link.astro';
 
 interface Props {
 	readTime: string;
-	frontmatter: unknown;
+	frontmatter: {
+		title: string;
+		description: string;
+		coverImage: {
+			src: string;
+			alt: string;
+		};
+		publishedTime: Date;
+		modifiedTime: Date;
+		tags: string[];
+		blueskyPostId: string;
+	};
 }
 const { frontmatter, readTime } = Astro.props;
+
+const uri = encodeURIComponent(`at://wadamek.me/app.bsky.feed.post/${frontmatter.blueskyPostId}`);
+const endpoint = `https://api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=${uri}`;
+const response = await fetch(endpoint);
+const data = await response.json();
+const comments = data.thread?.replies || [];
 ---
 
 <article
@@ -30,35 +50,55 @@ const { frontmatter, readTime } = Astro.props;
 		class="rounded-xl"
 		alt={frontmatter.coverImage.alt}
 		src={frontmatter.coverImage.src}
-		inferSize="true"
+		inferSize={true}
 		loading="eager"
 	/>
 	<slot />
-	<section>
-		<hr class="border-dashed border-puerto-rico-400" />
-		<div class="flex justify-center">
+	<section class="not-prose">
+		<hr class="my-16 border-dashed border-puerto-rico-400" />
+		<Newsletter
+			><p class="mb-4 text-center">
+				Subscribe to my newsletter to stay up to date with my content!
+			</p>
+		</Newsletter>
+
+		<div class="mt-16 flex justify-center">
 			<ProfilePicture width={75} height={75} />
 		</div>
-
-		<div class="not-prose flex items-center justify-center gap-x-2 text-center text-st-tropaz-700">
-			<a
-				class="text-xl decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
-				href="/">home</a
-			>
+		<div
+			class:list={[
+				'not-prose',
+				'mt-8',
+				'flex',
+				'items-center',
+				'justify-center',
+				'gap-x-2',
+				'text-center',
+				'text-puerto-rico-600',
+			]}
+		>
+			<Link href="/">home</Link>
 			&bull;
-			<a
-				class="text-xl decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
-				href="/blog/">blog</a
-			>
+			<Link href="/blog/">blog</Link>
 			&bull;
 			<IconLink name="github" alt="GitHub profile link" href="https://github.com/wadamek65" />
 		</div>
-		<div class="not-prose mt-6 flex justify-center">
-			<a
-				class="flex items-center text-sm text-st-tropaz-700 decoration-st-tropaz-700 decoration-2 underline-offset-4 hover:underline focus:underline"
-				href="/rss.xml"
-				target="_blank">RSS<Icon class="ml-1 inline size-4" name="rss" /></a
+		<div class="not-prose mt-4 flex justify-center">
+			<Link class="text-sm" href="/rss.xml" target="_blank"
+				>RSS<Icon class="ml-1 inline size-4" name="rss" /></Link
 			>
 		</div>
+	</section>
+	<section class="not-prose mt-16">
+		<div class="mb-8">
+			<Link
+				target="_blank"
+				class="text-sm"
+				href=`https://bsky.app/profile/wadamek.me/post/${frontmatter.blueskyPostId}`
+			>
+				Reply to this Bluesky post to post a comment!
+			</Link>
+		</div>
+		<BlogComments comments={comments} />
 	</section>
 </article>
