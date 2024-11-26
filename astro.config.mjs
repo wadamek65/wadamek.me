@@ -6,6 +6,8 @@ import sentry from '@sentry/astro';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://wadamek.me',
@@ -25,6 +27,7 @@ export default defineConfig({
 			enabled: import.meta.env.PROD,
 			tracesSampleRate: 1.0,
 		}),
+		react(),
 	],
 	markdown: {
 		remarkPlugins: [remarkReadingTime],

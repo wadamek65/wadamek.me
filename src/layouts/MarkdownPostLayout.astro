@@ -7,7 +7,7 @@ import ProfilePicture from '../components/ProfilePicture.astro';
 import IconLink from '../components/IconLink.astro';
 import { Icon } from 'astro-icon/components';
 import Newsletter from '../components/Newsletter.astro';
-import BlogComments from '../components/BlogComments.astro';
+import { BlogComments } from '../components/BlogComments';
 import Link from '../components/Link.astro';
 
 interface Props {
@@ -26,12 +26,6 @@ interface Props {
 	};
 }
 const { frontmatter, readTime } = Astro.props;
-
-const uri = encodeURIComponent(`at://wadamek.me/app.bsky.feed.post/${frontmatter.blueskyPostId}`);
-const endpoint = `https://api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=${uri}`;
-const response = await fetch(endpoint);
-const data = await response.json();
-const comments = data.thread?.replies || [];
 ---
 
 <article
@@ -99,6 +93,6 @@ const comments = data.thread?.replies || [];
 				Reply to this Bluesky post to post a comment!
 			</Link>
 		</div>
-		<BlogComments comments={comments} />
+		<BlogComments client:load blueskyPostId={frontmatter.blueskyPostId} />
 	</section>
 </article>
