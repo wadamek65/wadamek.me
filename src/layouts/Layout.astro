@@ -10,7 +10,6 @@ import PostHog from '../components/PostHog.astro';
 
 const { title, description, openGraph, twitterImageAlt } = Astro.props;
 import profilePicture from '../media/profile_picture.png';
-import MailerLite from '../components/MailerLite.astro';
 
 const defaultImage = profilePicture.src;
 const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulder.';
@@ -55,7 +54,7 @@ const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulde
 				imageAlt: twitterImageAlt ?? defaultAlt,
 			}}
 		/>
-
+		<script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="336e72f3-0405-4168-a4ad-3f159ced624e"></script>
 		<ViewTransitions />
 		<PostHog />
 		<SpeedInsights />
