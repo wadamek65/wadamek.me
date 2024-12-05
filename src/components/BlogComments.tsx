@@ -21,7 +21,6 @@ export function BlogComments(props: BlogCommentsProps) {
 		void fetchComments();
 	}, []);
 
-	console.log(comments);
 	return (
 		<div className="flex flex-col">
 			{comments.map((comment, index) => (

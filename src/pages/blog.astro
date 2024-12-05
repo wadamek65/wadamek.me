@@ -10,7 +10,11 @@ import PageSectionTitle from '../components/PageSectionTitle.astro';
 
 import parrotVideo from '../media/parrot_video_resized.webm';
 
-const allPosts = await getCollection('posts');
+const allPosts = await getCollection('posts', (post) => {
+	return post.data.publishedTime;
+}).then((posts) =>
+	posts.sort((a, b) => b.data.publishedTime.getTime() - a.data.publishedTime.getTime()),
+);
 ---
 
 <Layout
@@ -34,7 +38,7 @@ const allPosts = await getCollection('posts');
 	</PageSection>
 	<PageSection>
 		<PageSectionTitle>posts</PageSectionTitle>
-		<ul>
+		<ul class="space-y-4">
 			{
 				allPosts.map((post) => (
 					<BlogPost

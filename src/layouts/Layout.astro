@@ -31,7 +31,7 @@ const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulde
 
 		<SEO
 			title={title}
-			titleTemplate="wadamek.me | %s"
+			titleTemplate="%s"
 			titleDefault="wadamek.me website"
 			description={description}
 			openGraph={{
@@ -54,7 +54,11 @@ const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulde
 				imageAlt: twitterImageAlt ?? defaultAlt,
 			}}
 		/>
-		<script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="336e72f3-0405-4168-a4ad-3f159ced624e"></script>
+		<script
+			is:inline
+			defer
+			src="https://cloud.umami.is/script.js"
+			data-website-id="336e72f3-0405-4168-a4ad-3f159ced624e"></script>
 		<ViewTransitions />
 		<PostHog />
 		<SpeedInsights />
