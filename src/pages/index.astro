@@ -8,9 +8,14 @@ import Newsletter from '../components/Newsletter.astro';
 import wojtekPronunciation from '../media/pl_wojtek.mp3';
 import wojciechPronunciation from '../media/pl_wojciech.mp3';
 import AudioButton from '../components/AudioButton.astro';
+import PageTitle from '../components/PageTitle.astro';
 ---
 
-<Layout title="home" description="wadamek.me homepage with contact information.">
+<Layout
+	title="Wojciech Adamek – Full-Stack Web Developer, Software Architect, and Tech Lead"
+	description="Explore the portfolio of Wojciech Adamek, a full-stack web developer, software architect, and tech lead based in Wrocław, Poland. Specializing in TypeScript, Node.js, ReactJS, and more, Wojciech delivers efficient, scalable web solutions. Join his newsletter for expert insights and updates."
+>
+	<PageTitle>home</PageTitle>
 	<PageSection>
 		<div class="mb-8 flex justify-center">
 			<ProfilePicture />

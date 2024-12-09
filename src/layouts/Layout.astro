@@ -22,6 +22,7 @@ const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulde
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/parrot_favicon_cropped.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link
 			rel="alternate"
 			type="application/rss+xml"
@@ -42,6 +43,7 @@ const defaultAlt = 'Drawn portrait of a man with a parrot sitting on the shoulde
 					title: title,
 					type: 'website',
 					image: defaultImage,
+					description,
 				},
 				...(openGraph ?? {}),
 			}}
