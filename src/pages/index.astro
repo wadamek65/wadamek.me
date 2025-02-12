@@ -1,35 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProfilePicture from '../components/ProfilePicture.astro';
+import AudioButton from '../components/AudioButton.astro';
 import Link from '../components/Link.astro';
+import Newsletter from '../components/Newsletter.astro';
 import PageSection from '../components/PageSection.astro';
 import PageSectionTitle from '../components/PageSectionTitle.astro';
-import Newsletter from '../components/Newsletter.astro';
-import wojtekPronunciation from '../media/pl_wojtek.mp3';
-import wojciechPronunciation from '../media/pl_wojciech.mp3';
-import AudioButton from '../components/AudioButton.astro';
 import PageTitle from '../components/PageTitle.astro';
+import ProfilePicture from '../components/ProfilePicture.astro';
+import Layout from '../layouts/Layout.astro';
+import wojciechPronunciation from '../media/pl_wojciech.mp3';
+import wojtekPronunciation from '../media/pl_wojtek.mp3';
 ---
 
 <Layout
-	title="Wojciech Adamek – Full-Stack Web Developer, Software Architect, and Tech Lead"
-	description="Explore the portfolio of Wojciech Adamek, a full-stack web developer, software architect, and tech lead based in Wrocław, Poland. Specializing in TypeScript, Node.js, ReactJS, and more, Wojciech delivers efficient, scalable web solutions. Join his newsletter for expert insights and updates."
+	title="Wojciech Adamek – Software Architect, Tech Lead, and Consultant"
+	description="Explore the portfolio of Wojciech Adamek, a software architect with over 10 years of experience in web development, specializing in the startup space."
 >
 	<PageTitle>home</PageTitle>
 	<PageSection>
 		<div class="mb-8 flex justify-center">
 			<ProfilePicture />
 		</div>
+		<div class="space-y-4">
 		<p>
 			Hi, I'm Wojciech <i>(Voy-chekh)</i><AudioButton
 				audioSrc={wojciechPronunciation}
 				altText="Play Wojciech Pronunciation"
-			/>, but you can also call me Wojtek<AudioButton
+			/>. You can also call me Wojtek<AudioButton
 				audioSrc={wojtekPronunciation}
-				altText="Play Wojciech Pronunciation"
-			/>. I'm a full stack web developer, software architect, and tech lead. You can discover and
-			follow all my work from here.
+				altText="Play Wojtek Pronunciation"
+			/>. I'm a software architect with over 10 years of experience in web development. I've worked/consulted for 10+ startups.
 		</p>
+		<p>
+			I'm currently working on my own projects and offering consultation and development services.
+		</p>
+		<ul class="space-y-2">
+			<li class="flex items-start space-x-3">
+				<span class="mt-0.5 text-emerald-500">→</span>
+				<span><span class="font-medium">Starting out as an entrepreneur?</span> I offer architecture design and technical guidance for your product ideas.</span>
+			</li>
+			<li class="flex items-start space-x-3">
+				<span class="mt-0.5 text-emerald-500">→</span>
+				<span><span class="font-medium">Startup struggling to move forward?</span> I provide code architecture and scalability audits.</span>
+			</li>
+			<li class="flex items-start space-x-3">
+				<span class="mt-0.5 text-emerald-500">→</span>
+				<span><span class="font-medium">Know exactly what you need?</span> I offer custom development (MVPs, e-commerce, static websites, existing apps).</span>
+			</li>
+		</ul>
+		<p>
+			Send me a message to consult with me for free!
+		</p>
+		</div>
 	</PageSection>
 	<PageSection>
 		<PageSectionTitle>socials</PageSectionTitle>
@@ -46,13 +67,11 @@ import PageTitle from '../components/PageTitle.astro';
 		</div>
 	</PageSection>
 	<PageSection>
-		<PageSectionTitle>newsletter</PageSectionTitle>
+		<PageSectionTitle>mailing list</PageSectionTitle>
 		<Newsletter>
 			<div class="mb-8">
 				<p>
-					I curate and share only the most important tips, tools, and news in my newsletter, saving
-					you time by cutting through the noise. Join to hear my insights, follow my journey, and
-					enjoy the occasional parrot picture.
+					If you'd like to follow my work, hear my insights and occasionally receive a parrot picture, join my mailing list!
 				</p>
 			</div>
 		</Newsletter>
